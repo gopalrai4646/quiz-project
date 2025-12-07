@@ -141,14 +141,12 @@ Keep it under 50 words. Plain text only.
     - Validates response structure before returning
   - **`generateFeedback(topic, score, total)`**:
     - Generates contextual feedback based on performance
-    - Includes error fallback to default message
+      
 
 ### State Management
 - **`store/useQuizStore.js`**: Centralized state using Zustand
   - Manages screen navigation (`currentScreen`)
   - Tracks quiz state: `questions`, `currentQuestionIndex`, `userAnswers`, `score`
-  - Handles loading and error states
-  - Implements dark mode with localStorage persistence
   - Provides actions: `setTopic`, `setQuestions`, `answerQuestion`, `nextQuestion`, `calculateScore`, `resetQuiz`
 
 ### Reusable Components
@@ -165,29 +163,13 @@ Keep it under 50 words. Plain text only.
 
 ## 5. Screenshots / Screen Recording
 
-*(Placeholders for screenshots)*
+<img width="1907" height="968" alt="Screenshot 2025-12-07 133837" src="https://github.com/user-attachments/assets/d39e084b-999b-4140-916d-7619fd19d606" />
+<img width="1913" height="971" alt="Screenshot 2025-12-07 133857" src="https://github.com/user-attachments/assets/186bf223-598f-4738-93fe-1e865aca7747" />
+<img width="1142" height="850" alt="Screenshot 2025-12-07 133944" src="https://github.com/user-attachments/assets/afe75092-b526-4b68-9c65-6a1935c5f881" />
+<img width="1489" height="869" alt="Screenshot 2025-12-07 134012" src="https://github.com/user-attachments/assets/aed690ee-cba3-47ca-a6cd-9975cf344c02" />
+<img width="1284" height="861" alt="Screenshot 2025-12-07 134235" src="https://github.com/user-attachments/assets/d6fbc80b-e830-4e6d-a117-f6e28e6c4e0c" />
+<img width="1350" height="873" alt="Screenshot 2025-12-07 134306" src="https://github.com/user-attachments/assets/b127620d-6d9d-47c4-bedf-1b6d3ae464bb" />
 
-### Screen 1: Topic Selection
-- Grid layout displaying 6 topic cards (Tech Trends, World History, Space Exploration, Healthy Living, Modern Art, Cybersecurity Basics)
-- Header with logo and dark mode toggle
-- Clean, responsive design with hover effects
-
-### Screen 2: Quiz Interface
-- Progress bar showing current question (e.g., "Question 2 of 5")
-- Large question card with 4 multiple-choice options
-- Previous/Next navigation buttons
-- Responsive layout for mobile and desktop
-
-### Screen 3: Results Screen
-- Large score display (X/5 format)
-- Percentage score
-- AI-generated feedback in highlighted box
-- "Try Another Topic" button to restart
-- Confetti animation on high scores (via canvas-confetti library)
-
-### Screen 4: Loading States
-- Animated loader during quiz generation
-- Contextual loading messages ("Generating [Topic] Quiz...", "Analyzing Results...")
 
 ---
 
@@ -197,8 +179,7 @@ Keep it under 50 words. Plain text only.
 1. **Environment Variable Handling**: The code uses `process.env.API_KEY` which may not work directly with Vite. Should use `import.meta.env.VITE_GEMINI_API_KEY` or configure build tools properly.
 2. **No Error Recovery for Feedback**: If feedback generation fails, it falls back to a generic message, but there's no retry mechanism like quiz generation has.
 3. **Limited Topic Selection**: Only 6 predefined topics. No option for custom user-input topics.
-4. **No Local Storage for Progress**: Quiz progress is lost on page refresh - users can't resume a quiz.
-5. **API Rate Limiting**: No explicit handling for API rate limits or quota exhaustion.
+
 
 ### Improvements (with more time):
 1. **Custom Topics**: Allow users to input any topic they want to quiz themselves on
@@ -211,15 +192,7 @@ Keep it under 50 words. Plain text only.
 5. **Quiz Analytics**: 
    - Track which questions users get wrong most often
    - Show performance trends over time
-6. **Accessibility Improvements**:
-   - Better keyboard navigation
-   - ARIA labels for screen readers
-   - Focus management
-7. **Performance Optimizations**:
-   - Pre-load next question while user is reading current one
-   - Cache generated quizzes for popular topics
-8. **Social Features**: Share scores, challenge friends
-9. **Question Review**: After completion, show which answers were correct/incorrect with explanations
+
 
 
 ---
@@ -235,25 +208,3 @@ Keep it under 50 words. Plain text only.
 ### UI/UX Polish
 - **Smooth Animations**: Fade-in effects for screen transitions
 - **Hover Effects**: Interactive feedback on buttons and topic cards
-- **Visual Feedback**: Disabled states for navigation buttons, selected option highlighting
-- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
-- **Confetti Animation**: Celebratory confetti effect on quiz completion (using canvas-confetti library)
-
-### Error Handling
-- Comprehensive error boundaries
-- User-friendly error messages with recovery options
-- Automatic retry mechanism for failed API calls
-- Graceful degradation (fallback messages when feedback generation fails)
-
-### Code Quality
-- Clean separation of concerns (services, components, store)
-- Reusable component architecture
-- Type-safe constants and enums
-- Well-structured state management with Zustand
-
-### Additional Features
-- Progress tracking during quiz
-- Ability to go back and change answers before submission
-- Visual progress indicator
-- Contextual loading messages
-- Clean, modern UI design with Tailwind CSS
