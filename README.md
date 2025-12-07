@@ -165,29 +165,7 @@ Keep it under 50 words. Plain text only.
 
 ## 5. Screenshots / Screen Recording
 
-*(Placeholders for screenshots)*
 
-### Screen 1: Topic Selection
-- Grid layout displaying 6 topic cards (Tech Trends, World History, Space Exploration, Healthy Living, Modern Art, Cybersecurity Basics)
-- Header with logo and dark mode toggle
-- Clean, responsive design with hover effects
-
-### Screen 2: Quiz Interface
-- Progress bar showing current question (e.g., "Question 2 of 5")
-- Large question card with 4 multiple-choice options
-- Previous/Next navigation buttons
-- Responsive layout for mobile and desktop
-
-### Screen 3: Results Screen
-- Large score display (X/5 format)
-- Percentage score
-- AI-generated feedback in highlighted box
-- "Try Another Topic" button to restart
-- Confetti animation on high scores (via canvas-confetti library)
-
-### Screen 4: Loading States
-- Animated loader during quiz generation
-- Contextual loading messages ("Generating [Topic] Quiz...", "Analyzing Results...")
 
 ---
 
