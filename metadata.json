@@ -1,0 +1,5 @@
+{
+  "name": "Gemini Knowledge Quiz",
+  "description": "An AI-powered quiz application that generates dynamic questions and provides personalized feedback using Google Gemini API.",
+  "requestFramePermissions": []
+}
