@@ -9,7 +9,7 @@ const MAX_RETRIES = 2;
  * Generates quiz questions based on the topic.
  */
 export const generateQuizQuestions = async (topic) => {
-  const modelId = "gemini-2.0-flash";
+  const modelId = "gemini-2.5-flash";
   
   // Define Schema using the SDK's Type enum
   const schema = {
@@ -94,7 +94,7 @@ Provide only valid, factually accurate content.`;
 export const generateFeedback = async (topic, score, total) => {
   try {
     const result = await ai.models.generateContent({
-      model: "gemini-2.0-flash",
+      model: "gemini-2.5-flash",
       contents: `Generate a short, friendly feedback message for a user who took a quiz on "${topic}".
       They scored ${score} out of ${total}.
       If the score is high, be congratulatory.
