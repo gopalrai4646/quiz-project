@@ -28,15 +28,6 @@ Run `npm install && npm run dev` to launch locally.
    ```
    The app will be available at `http://localhost:5173` (or the port Vite assigns).
 
-### Mobile: 
-*This is a web-only React application. It is not configured for mobile native development.*
-
-**For future mobile support:**
-- For iOS: Would require React Native conversion and Xcode setup
-- For Android: Would require React Native conversion and Android Studio setup
-
-### Demo: 
-Provide a screen recording or hosted link demonstrating the application flow.
 
 ---
 
@@ -229,7 +220,7 @@ Keep it under 50 words. Plain text only.
    - Cache generated quizzes for popular topics
 8. **Social Features**: Share scores, challenge friends
 9. **Question Review**: After completion, show which answers were correct/incorrect with explanations
-10. **Mobile App**: Convert to React Native for native iOS/Android experience
+
 
 ---
 
