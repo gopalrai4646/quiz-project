@@ -9,7 +9,7 @@ const MAX_RETRIES = 2;
  * Generates quiz questions based on the topic.
  */
 export const generateQuizQuestions = async (topic) => {
-  const modelId = "gemini-2.5-flash";
+  const modelId = "gemini-1.5-flash";
   
   // Define Schema using the SDK's Type enum
   const schema = {
