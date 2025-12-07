@@ -77,12 +77,7 @@ Make the tone engaging and educational, and avoid generic or repetitive phrasing
 Provide only valid, factually accurate content.
 ```
 
-**Technical Improvements:**
-- Implemented structured JSON schema using `responseSchema` with Type definitions
-- Added retry mechanism (MAX_RETRIES = 2) to handle transient API failures
-- Added validation checks for question structure (4 options, correct index range)
-- Used `responseMimeType: "application/json"` to enforce JSON response format
-- Set temperature to 0.7 for balanced creativity and consistency
+
 
 ### Initial Prompt for Feedback Generation:
 ```
@@ -109,55 +104,35 @@ Keep it under 50 words. Plain text only.
 
 ### Navigation Management
 - **`App.jsx`** manages the overall application structure and screen routing
-  - Uses Zustand store (`useQuizStore`) to track current screen state
-  - Implements screen switching logic between `TOPICS`, `QUIZ`, `RESULT`, and `ERROR` states
-  - Handles dark mode toggling and theme persistence
-  - Manages loading states and error display
+  
 
 ### Screen Components
 - **`screens/TopicScreen.jsx`**: Entry point displaying topic selection grid
-  - Renders 6 predefined topics from `types.js`
-  - Triggers quiz generation on topic selection
-  - Handles loading state during API call
+  
 
 - **`screens/QuizScreen.jsx`**: Main quiz interface
-  - Displays questions one at a time with navigation
-  - Shows progress bar indicating current question
-  - Allows users to select/unselect answers
-  - Handles next/previous navigation
-  - Triggers feedback generation on quiz completion
+  
 
 - **`screens/ResultScreen.jsx`**: Displays quiz results
-  - Shows score (X/5 format) and percentage
-  - Displays AI-generated personalized feedback
-  - Provides option to restart with a new topic
-
+ 
 ### AI Service Layer
 - **`services/geminiService.js`**: Handles all AI interactions
   - **`generateQuizQuestions(topic)`**: 
-    - Uses Gemini 2.5 Flash model
-    - Implements structured JSON schema for response validation
-    - Includes retry logic (up to 2 retries) for failed API calls
-    - Validates response structure before returning
+   
   - **`generateFeedback(topic, score, total)`**:
-    - Generates contextual feedback based on performance
+    
       
 
 ### State Management
 - **`store/useQuizStore.js`**: Centralized state using Zustand
-  - Manages screen navigation (`currentScreen`)
-  - Tracks quiz state: `questions`, `currentQuestionIndex`, `userAnswers`, `score`
-  - Provides actions: `setTopic`, `setQuestions`, `answerQuestion`, `nextQuestion`, `calculateScore`, `resetQuiz`
+ 
 
 ### Reusable Components
 - **`components/QuestionCard.jsx`**: Displays individual question with options
 - **`components/ProgressBar.jsx`**: Visual indicator of quiz progress
 - **`components/Loader.jsx`**: Loading spinner with contextual messages
 
-### Configuration
-- **`types.js`**: Defines constants
-  - `ScreenState` enum for navigation states
-  - `TOPICS` array with available quiz topics
+
 
 ---
 
@@ -202,8 +177,7 @@ Keep it under 50 words. Plain text only.
 ### Dark Mode
 - Full dark mode implementation with smooth transitions
 - Theme preference persisted in localStorage
-- Toggle button in header for easy access
-- Consistent dark theme across all screens
+
 
 ### UI/UX Polish
 - **Smooth Animations**: Fade-in effects for screen transitions
